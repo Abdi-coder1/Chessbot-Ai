@@ -1,0 +1,28 @@
+# Projektstruktur
+
+ChessGame/
+│
+├── __init__.py
+├── chess_engine.py        # Innehåller regler, och belsutar vad som bör göras.
+├── game_board.py          # Hanterar tillstånd: var pjäser är, flytta pjäs, capture osv, upfattar regler
+├── pieces/
+│   ├── __init__.py
+│   ├── piece.py           # Bas/abstrakt klass för pjäs, genrellea attribut osm position, historik levande osv.
+│   ├── pawn.py            # Subklass med egna rörelsemönster, och spelciella attribut son anpassat elelr castling
+│   ├── knight.py
+│   └── ...                # osv för varje pjästyp
+├── chess_graphics.py      # Ritar ch visar skärmen, Ai spelet och alla giltiga drag. Även pawn_promotion
+├── game_handler.py        # (ev. valfri) Dirigerar mainloop & sammankoppling
+
+Players/
+│   ├── __init__.py
+│   ├── human_player.py    # Använder input/click för att reutrnea ett drag goivit brädet.
+│   └── ai_player.py       # Använder heuristik och sökning för att reutrnera ett drag, givit brädet
+
+assets/
+├── __init__.py
+├── game_assets.py         # Färger, FPS, skärmstorlek osv
+├── chess_assets.py        # Bilder på pjäser, initial position
+└── ai_assets.py           # AI-parametrar, eval-viktning etc
+
+main.py                    # Startar spelet
