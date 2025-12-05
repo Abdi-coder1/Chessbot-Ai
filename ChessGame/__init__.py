@@ -1,1 +1,0 @@
-from ChessGame.chess_game_handler import GameHandler
