@@ -31,57 +31,60 @@ The codebase follows a classical OOP style of modelling domain entities explicit
 **Map Structure**
 ChessGame/
 │
-├── __init__.py
+ ├── __init__.py
 
-├── chess_engine.py        # Owns the main game logic: turn flow, rules, winner detection,
-│                          # applying Maneuvers, coordinating board + graphics + players.
+  ├── chess_engine.py        # Owns the main game logic: turn flow, rules, winner detection,
+  │                          # applying Maneuvers, coordinating board + graphics + players.
 
-│
-├── board.py               # Maintains full game state: where all pieces are, applying moves,
-│                          # updating positions, captures, check/checkmate logic, etc.
+  │
+  ├── board.py               # Maintains full game state: where all pieces are, applying moves,
+  │                          # updating positions, captures, check/checkmate logic, etc.
 
-│
-├── game_graphic.py        # Responsible for drawing the game: board, pieces, highlights,
-│                          # captured pieces, promotion UI, end screen, history screen.
+  │
+  ├── game_graphic.py        # Responsible for drawing the game: board, pieces, highlights,
+  │                          # captured pieces, promotion UI, end screen, history screen.
 
-│
-├── initial.py             # Defines initial board setup and any static starting-position data.
-│
+  │
+  ├── initial.py             # Defines initial board setup and any static starting-position data.
+  │
 
-├── maneuver.py            # Pure data container describing a move: start/end, capture info,
-│                          # castling, promotion, en passant, piece reference, etc.
+  ├── maneuver.py            # Pure data container describing a move: start/end, capture info,
+  │                          # castling, promotion, en passant, piece reference, etc.
 
-│
-└── piece.py               # Abstract base class for all pieces. Holds common attributes
+  │
+  └── piece.py               # Abstract base class for all pieces. Holds common attributes
                            # (position, color, history) and shared helper methods.
                            
-    │
-    ├── pawn            # Pawn movement rules, captures, promotion logic, en passant.
-    ├── knight          # Knight movement rules.
-    ├── bishop          # Bishop movement rules.
-    ├── rook            # Rook movement rules.
-    ├── queen           # Queen movement rules.
-    └── king            # King movement rules, castling conditions and checks.
+      │
+      ├── pawn            # Pawn movement rules, captures, promotion logic, en passant.
+      ├── knight          # Knight movement rules.
+      ├── bishop          # Bishop movement rules.
+      ├── rook            # Rook movement rules.
+      ├── queen           # Queen movement rules.
+      └── king            # King movement rules, castling conditions and checks.
 
 Player/
 │
-├── __init__.py
-├── human.py               # Handles mouse input, selection, user-driven Maneuver creation.
-└── ai.py                  # (Planned) AI player that will generate moves with heuristics,
-                           # search algorithms, evaluation etc.
-Config/
-│
-├── __init__.py
-├── game_assets.py         # Window size, fonts, FPS, timers, UI layout, button surfaces.
-└── chess_assets.py        # Piece images, scaled versions, board colors, starting visuals.
-├─  ai_asset.py            # Hold the necessary attributes and object for an functioning AI.
+  ├── __init__.py
 
-Extra/
-│
-├── __init__.py
-├── chess_code_structure   # Documentation describing the architecture.
-├── Notes and rules        # Your design notes: chess rules, programming rules, TODOs.
-└── Scrap_file.py          # Experimental or discardable code.
+  ├── human.py               # Handles mouse input, selection, user-driven Maneuver creation.
+
+  └── ai.py                  # (Planned) AI player that will generate moves with heuristics,
+                           # search algorithms, evaluation etc.
+                           
+Config/
+  │
+  ├── __init__.py
+  ├── game_assets.py         # Window size, fonts, FPS, timers, UI layout, button surfaces.
+  └── chess_assets.py        # Piece images, scaled versions, board colors, starting visuals.
+  ├─  ai_asset.py            # Hold the necessary attributes and object for an functioning AI.
+
+  Extra/
+  │
+  ├── __init__.py
+  ├── chess_code_structure   # Documentation describing the architecture.
+  ├── Notes and rules        # Your design notes: chess rules, programming rules, TODOs.
+  └── Scrap_file.py          # Experimental or discardable code.
 
 
 Main.py                    # Entry point: creates ChessEngine, runs main loop,
