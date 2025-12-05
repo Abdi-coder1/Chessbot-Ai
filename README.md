@@ -32,22 +32,29 @@ The codebase follows a classical OOP style of modelling domain entities explicit
 ChessGame/
 │
 ├── __init__.py
+
 ├── chess_engine.py        # Owns the main game logic: turn flow, rules, winner detection,
 │                          # applying Maneuvers, coordinating board + graphics + players.
+
 │
 ├── board.py               # Maintains full game state: where all pieces are, applying moves,
 │                          # updating positions, captures, check/checkmate logic, etc.
+
 │
 ├── game_graphic.py        # Responsible for drawing the game: board, pieces, highlights,
 │                          # captured pieces, promotion UI, end screen, history screen.
+
 │
 ├── initial.py             # Defines initial board setup and any static starting-position data.
 │
+
 ├── maneuver.py            # Pure data container describing a move: start/end, capture info,
 │                          # castling, promotion, en passant, piece reference, etc.
+
 │
 └── piece.py               # Abstract base class for all pieces. Holds common attributes
                            # (position, color, history) and shared helper methods.
+                           
     │
     ├── pawn            # Pawn movement rules, captures, promotion logic, en passant.
     ├── knight          # Knight movement rules.
