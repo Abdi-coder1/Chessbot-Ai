@@ -75,17 +75,61 @@ Player/
 Config/
   │
   ├── __init__.py
+  
   ├── game_assets.py         # Window size, fonts, FPS, timers, UI layout, button surfaces.
+  
   └── chess_assets.py        # Piece images, scaled versions, board colors, starting visuals.
+  
   ├─  ai_asset.py            # Hold the necessary attributes and object for an functioning AI.
 
   Extra/
   │
   ├── __init__.py
   ├── chess_code_structure   # Documentation describing the architecture.
+  
   ├── Notes and rules        # Your design notes: chess rules, programming rules, TODOs.
+  
   └── Scrap_file.py          # Experimental or discardable code.
 
 
 Main.py                    # Entry point: creates ChessEngine, runs main loop,
                            # switches between play mode, game-over screen, history view.
+
+
+**Extensibility**
+
+The architecture is prepared for:
+
+   *AI players
+
+   *Different UIs
+  
+   *Custom starting positions
+  
+   *Logging, analytics, or engine-versus-engine battles
+
+**Requirements**
+
+  *Python 3.10+
+
+  *Pygame
+
+  *Local image assets for pieces (png files)
+
+**Planned Features (AI Integration)**
+
+The project structure is designed to support a competitive chess AI, including:
+
+  *Minimax search
+ 
+  *Alpha-beta pruning
+ 
+  *Move ordering
+ 
+  *Piece-square evaluation tables
+ 
+  *Transposition tables
+ 
+**License**
+
+  *MIT License.
